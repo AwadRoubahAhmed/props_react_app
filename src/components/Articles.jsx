@@ -1,6 +1,11 @@
 import Button from "./Button";
 function Articles({ id, title, children }) {
-  console.log(title);
+  console.log(handelClick);
+
+  const handelClick = () => {
+    console.log(`The buttton with id ${id} is clicked!!`);
+  };
+
   return (
     <div className="container max-w-lg h-fit my-4 mx-auto p-4 text-white font bg-blue-950 rounded-md">
       <h3 className="text-xl font-semibold my-1 p-2 underline">
@@ -8,7 +13,7 @@ function Articles({ id, title, children }) {
       </h3>
       <p>{children}</p>
       <p className="font-bold my-2">Counter: </p>
-      <Button id={id}>
+      <Button onClick={handelClick} disabled={false} id={id}>
         Click here
       </Button>
     </div>
